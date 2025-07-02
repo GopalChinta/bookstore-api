@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "f8d6ed09-02e1-4a16-b4a0-267972a9d3b0",
+		"name": "localhost:3000",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46395279"
+	},
+	"item": [
+		{
+			"name": "/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3NTE0NjUwMTY1NjUiLCJlbWFpbCI6ImdvcGFsQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUxNDY2MDQ0LCJleHAiOjE3NTE1NTI0NDR9.QK_GTVz8z-04SjkmP-d6rv6gKh6ggPM3oqYYe8VPp_c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"gopal\",\r\n  \"email\": \"gopal@example.com\",\r\n  \"password\": \"test123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"gopal\",\r\n  \"email\": \"gopal@example.com\",\r\n  \"password\": \"test123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"gopal\",\r\n  \"email\": \"gopal@example.com\",\r\n  \"password\": \"test123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Untitled Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3NTE0NjUwMTY1NjUiLCJlbWFpbCI6ImdvcGFsQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUxNDY2MDQ0LCJleHAiOjE3NTE1NTI0NDR9.QK_GTVz8z-04SjkmP-d6rv6gKh6ggPM3oqYYe8VPp_c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My First Book\",\r\n  \"author\": \"Gopal\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				},
+				"description": "### Add a New Book\n\nThis endpoint allows users to add a new book to the collection. It accepts a POST request with the necessary details about the book in the request body.\n\n#### Request\n\n- **Method**: POST\n    \n- **URL**: `http://localhost:3000/books`\n    \n\n##### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **title** (string): The title of the book.\n    \n- **author** (string): The author of the book.\n    \n\n**Example Request Body:**\n\n``` json\n{\n  \"title\": \"My First Book\",\n  \"author\": \"Gopal\"\n}\n\n ```\n\n#### Response\n\nUpon successful creation of the book, the server will respond with a status code of `201 Created`. The response will contain the following JSON structure:\n\n- **id** (string): The unique identifier for the newly created book.\n    \n- **title** (string): The title of the book.\n    \n- **author** (string): The author of the book.\n    \n\n**Example Response:**\n\n``` json\n{\n  \"id\": \"\",\n  \"title\": \"\",\n  \"author\": \"\"\n}\n\n ```\n\nThis response confirms that the book has been successfully added to the collection."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
